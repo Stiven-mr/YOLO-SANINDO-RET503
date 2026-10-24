@@ -108,3 +108,33 @@ Pastikan dataset dan bobot E1 tersedia sesuai lokasi yang diharapkan sebelum men
 
 SANINDO — Roboflow Universe:  
 https://universe.roboflow.com/maikaels-workspace/sanindo
+
+## 10. Visualisasi Hasil Eksperimen
+
+Bagian ini menampilkan grafik hasil training, confusion matrix, kurva Precision-Recall, dan contoh prediksi dari setiap eksperimen.
+
+### 10.1 Grafik Training
+
+| E1 — Pretrained | E2 — Scratch | E3 — Tuning |
+|---|---|---|
+| ![Grafik E1](hasil_praktik/E1_pretrained/results.png) | ![Grafik E2](hasil_praktik/E2_scratch/results.png) | ![Grafik E3](hasil_praktik/E3_tuning/results.png) |
+
+### 10.2 Confusion Matrix
+
+| E1 — Pretrained | E2 — Scratch | E3 — Tuning |
+|---|---|---|
+| ![Confusion Matrix E1](hasil_praktik/E1_pretrained/confusion_matrix.png) | ![Confusion Matrix E2](hasil_praktik/E2_scratch/confusion_matrix.png) | ![Confusion Matrix E3](hasil_praktik/E3_tuning/confusion_matrix.png) |
+
+### 10.3 Kurva Precision-Recall
+
+| E1 — Pretrained | E2 — Scratch | E3 — Tuning |
+|---|---|---|
+| ![Kurva PR E1](hasil_praktik/E1_pretrained/BoxPR_curve.png) | ![Kurva PR E2](hasil_praktik/E2_scratch/BoxPR_curve.png) | ![Kurva PR E3](hasil_praktik/E3_tuning/BoxPR_curve.png) |
+
+### 10.4 Contoh Prediksi pada Data Validasi
+
+| E1 — Pretrained | E2 — Scratch | E3 — Tuning |
+|---|---|---|
+| ![Prediksi E1](hasil_praktik/E1_pretrained/val_batch0_pred.jpg) | ![Prediksi E2](hasil_praktik/E2_scratch/val_batch0_pred.jpg) | ![Prediksi E3](hasil_praktik/E3_tuning/val_batch0_pred.jpg) |
+
+Gambar di atas digunakan untuk membandingkan visualisasi dan hasil prediksi antareksperimen. Hasil kuantitatif tetap mengacu pada metrik validasi dan evaluasi test yang tercantum sebelumnya.
