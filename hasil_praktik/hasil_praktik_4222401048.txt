@@ -1,0 +1,36 @@
+PRAKTIK TERPADU RET503 - PERBANDINGAN MODEL YOLO
+NIM / Nama: 4222401048 / STIVEN RAIN HEART
+Waktu laporan: 24-10-2026 14:03:20
+Dataset: C:\Users\ACER NITRO\Downloads\YOLO\YOLO\YOLO\dataset_sanindo_v1\data.yaml
+Epoch E2/E3: 10; imgsz dasar: 416; batch: 4
+
+E1_pretrained
+  Perubahan: baseline; bobot yang sudah tersimpan
+  Precision: 0.8827
+  Recall: 0.8464
+  mAP50: 0.9064
+  mAP50-95: 0.5532
+  Bobot: C:\Users\ACER NITRO\Downloads\YOLO\YOLO\YOLO\hasil_praktik\E1_pretrained\weights\best.pt
+
+E2_scratch
+  Perubahan: inisialisasi bobot acak
+  Precision: 0.7076
+  Recall: 0.5668
+  mAP50: 0.6639
+  mAP50-95: 0.3178
+  Bobot: C:\Users\ACER NITRO\Downloads\YOLO\YOLO\YOLO\hasil_praktik\E2_scratch\weights\best.pt
+
+E3_tuning
+  Perubahan: imgsz=640
+  Precision: 0.9063
+  Recall: 0.8459
+  mAP50: 0.9142
+  mAP50-95: 0.573
+  Bobot: C:\Users\ACER NITRO\Downloads\YOLO\YOLO\YOLO\hasil_praktik\E3_tuning\weights\best.pt
+
+Model terbaik berdasarkan validasi: E3_tuning
+Hasil evaluasi TEST model terbaik:
+  Precision: 0.8902
+  Recall: 0.8451
+  mAP50: 0.9238
+  mAP50-95: 0.5608
