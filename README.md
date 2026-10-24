@@ -138,3 +138,112 @@ Bagian ini menampilkan grafik hasil training, confusion matrix, kurva Precision-
 | ![Prediksi E1](hasil_praktik/E1_pretrained/val_batch0_pred.jpg) | ![Prediksi E2](hasil_praktik/E2_scratch/val_batch0_pred.jpg) | ![Prediksi E3](hasil_praktik/E3_tuning/val_batch0_pred.jpg) |
 
 Gambar di atas digunakan untuk membandingkan visualisasi dan hasil prediksi antareksperimen. Hasil kuantitatif tetap mengacu pada metrik validasi dan evaluasi test yang tercantum sebelumnya.
+
+---
+
+## 10. Ringkasan Visual Eksperimen
+
+Grafik berikut membandingkan hasil validasi dan perkembangan training tiga eksperimen model YOLO untuk deteksi kelas `person` pada dataset SANINDO.
+
+![Ringkasan hasil E1, E2, dan E3](hasil_praktik/ringkasan_perbandingan.png)
+
+## 11. Hasil Validasi
+
+| Eksperimen | Input | mAP50 | mAP50-95 | Precision | Recall |
+|---|---:|---:|---:|---:|---:|
+| E1 — Pretrained | 416 | 90.64% | 55.32% | 88.27% | 84.64% |
+| E2 — Scratch | 416 | 66.39% | 31.78% | 70.76% | 56.68% |
+| E3 — Tuning | 640 | 91.42% | 57.30% | 90.63% | 84.59% |
+
+E3 mendapatkan mAP50-95 validasi tertinggi, yaitu 57.30%. Nilai tersebut meningkat 1.98 poin persentase dibandingkan E1.
+
+## 12. Hasil Test
+
+Model yang dipilih berdasarkan hasil validasi adalah E3 — Tuning.
+
+| Metrik | Hasil test |
+|---|---:|
+| Precision | 89.02% |
+| Recall | 84.51% |
+| mAP50 | 92.38% |
+| mAP50-95 | 56.08% |
+
+Evaluasi test dilakukan setelah pemilihan model menggunakan data validasi.
+
+## 13. Grafik Training dan Contoh Prediksi
+
+<details>
+<summary>E1 — Pretrained</summary>
+
+**Kurva training dan validasi**
+
+![Grafik E1](hasil_praktik/E1_pretrained/results.png)
+
+**Confusion matrix**
+
+![Confusion matrix E1](hasil_praktik/E1_pretrained/confusion_matrix.png)
+
+**Kurva Precision-Recall**
+
+![Kurva PR E1](hasil_praktik/E1_pretrained/BoxPR_curve.png)
+
+**Contoh prediksi validasi**
+
+![Prediksi E1](hasil_praktik/E1_pretrained/val_batch0_pred.jpg)
+
+</details>
+
+<details>
+<summary>E2 — Scratch</summary>
+
+**Kurva training dan validasi**
+
+![Grafik E2](hasil_praktik/E2_scratch/results.png)
+
+**Confusion matrix**
+
+![Confusion matrix E2](hasil_praktik/E2_scratch/confusion_matrix.png)
+
+**Kurva Precision-Recall**
+
+![Kurva PR E2](hasil_praktik/E2_scratch/BoxPR_curve.png)
+
+**Contoh prediksi validasi**
+
+![Prediksi E2](hasil_praktik/E2_scratch/val_batch0_pred.jpg)
+
+</details>
+
+<details>
+<summary>E3 — Tuning</summary>
+
+**Kurva training dan validasi**
+
+![Grafik E3](hasil_praktik/E3_tuning/results.png)
+
+**Confusion matrix**
+
+![Confusion matrix E3](hasil_praktik/E3_tuning/confusion_matrix.png)
+
+**Kurva Precision-Recall**
+
+![Kurva PR E3](hasil_praktik/E3_tuning/BoxPR_curve.png)
+
+**Contoh prediksi validasi**
+
+![Prediksi E3](hasil_praktik/E3_tuning/val_batch0_pred.jpg)
+
+</details>
+
+## 14. Berkas Hasil
+
+- [Laporan eksperimen TXT](hasil_praktik/hasil_praktik_4222401048.txt)
+- [Hasil perbandingan CSV](hasil_praktik/hasil_praktik_4222401048.csv)
+- [Grafik ringkasan eksperimen](hasil_praktik/ringkasan_perbandingan.png)
+- [Konfigurasi dataset](dataset_sanindo_v1/data.yaml)
+
+Bobot model `.pt` dan gambar/label dataset tidak disertakan dalam repository agar ukuran repository tetap ringan.
+
+## 15. Kesimpulan
+
+Berdasarkan eksperimen ini, E3 — Tuning memiliki hasil validasi terbaik dengan mAP50-95 sebesar 57.30%. Hasil tersebut menunjukkan peningkatan dibandingkan model pretrained E1 pada konfigurasi yang diuji. E2 — Scratch mendapatkan nilai terendah pada metrik yang ditampilkan. Hasil test E3 dicatat secara terpisah setelah model dipilih berdasarkan validasi.
